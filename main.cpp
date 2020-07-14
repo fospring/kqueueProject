@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     timeout.tv_nsec = 500000000;    // 500 milliseconds
 
     /* Set up a list of events to monitps. */
-    vnode_events = NOTE_DELETE |  NOTE_WRITE | NOTE_EXTEND |                            NOTE_ATTRIB | NOTE_LINK | NOTE_RENAME | NOTE_REVOKE;
+    vnode_events = NOTE_DELETE |  NOTE_WRITE | NOTE_EXTEND | NOTE_ATTRIB | NOTE_LINK | NOTE_RENAME | NOTE_REVOKE;
     EV_SET( &events_to_monitps[0], event_fd, EVFILT_VNODE, EV_ADD | EV_CLEAR, vnode_events, 0, user_data);
 
     /* Handle events. */
